@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinya 2026 Dashboard (v1.1)</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif; margin: 24px; background:#fafafa; color:#111; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+    .card { background:#fff; border-radius:16px; box-shadow:0 1px 6px rgba(0,0,0,.06); padding:16px; }
+    .kpi { font-size:14px; color:#666; margin-bottom:8px; }
+    .value { font-size:24px; font-weight:700; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { padding:8px 10px; border-bottom:1px solid #eee; font-size:13px; }
+    th { text-align:left; color:#444; }
+    .neg { color:#b00020; font-weight:600; }
+  </style>
+</head>
+<body>
+  <h1>Sinya 2026 Dashboard <small>(v1.1)</small></h1>
+  <div class="grid">
+    <div class="card">
+      <div class="kpi">2025 Baseline (Sum)</div>
+      <div class="value" id="kpi-2025"></div>
+    </div>
+    <div class="card">
+      <div class="kpi">2026 Target (Sum)</div>
+      <div class="value" id="kpi-2026"></div>
+    </div>
+    <div class="card">
+      <div class="kpi">Growth vs 2025</div>
+      <div class="value" id="kpi-growth"></div>
+    </div>
+    <div class="card">
+      <div class="kpi">Stretch Uplift</div>
+      <div class="value" id="kpi-stretch"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <canvas id="bar"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>Data (Top 50 rows)</h3>
+    <div id="table"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
